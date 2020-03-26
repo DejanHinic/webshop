@@ -27,7 +27,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+    </div>
 
     <div class="row m-5">
             {% for product in product_objects %}
@@ -45,6 +45,27 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+    <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <ul class="pagination">
+                    {% if product_objects.has_previous %}
+                        <li class="page-item">
+                            <a href="?page={{ product_objects.previous_page_number  }}">Previous</a>
+                        </li>
+                    {% endif %}
+
+
+                    <li class="page-item active">
+                        <a href="?page={{ product_objects.number  }}">Current</a>
+                    </li>
+
+                    {% if product_objects.has_next %}
+                    <li class="page-item">
+                        <a href="?page={{ product_objects.next_page_number  }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+    </div>
 </body>
 </html>
