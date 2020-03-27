@@ -25,7 +25,7 @@ SECRET_KEY = 'li+wynhvjd86tx%i(3lcvd#n52dd-jd84_n_*nh(2am$g$v7s0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '127.0.0.1']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '8000-f4977f2f-7dfc-4c22-902c-3027e71c1f97.ws-eu01.gitpod.io']
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
+    'carts',
 ]
 
 MIDDLEWARE = [

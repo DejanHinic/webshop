@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.views import static
 from shop import views
+from carts.views import cart_home
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('<int:id>/', views.detail,name='detail'),
+    path('cart/', cart_home, name='cart'),
 ]
