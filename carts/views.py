@@ -11,6 +11,7 @@ def cart_create(user=None):
 
 
 def cart_home(request):
+    cart_obj = Cart.objects.new_or_get(request)
     cart_id = request.session.get("cart_id", None)
     qs = Cart.objects.filter(id=cart_id)
     if qs.count() == 1:
@@ -20,6 +21,6 @@ def cart_home(request):
             cart_obj.user = request.user
             cart_obj.save()
     else:
-        cart_obj = Cart.objects.new(user=request.user)
+        cart_obj = Cart.objects.New(user=request.user)
         request.session['cart_id'] = cart_obj.id
     return render(request, "carts/home.html", {})
