@@ -25,7 +25,7 @@ SECRET_KEY = 'li+wynhvjd86tx%i(3lcvd#n52dd-jd84_n_*nh(2am$g$v7s0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '8000-f4977f2f-7dfc-4c22-902c-3027e71c1f97.ws-eu01.gitpod.io']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '8000-e1240006-4887-463b-9444-bd2436c7ef9b.ws-eu01.gitpod.io']
 
 # Application definition
 
@@ -100,6 +100,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitiveAuth'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
